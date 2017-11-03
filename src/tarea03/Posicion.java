@@ -58,6 +58,7 @@ public class Posicion {
 		}
 
 	}
+	//Creamos el método toString
 	public String toString (){
 		
         String mensaje="La fila es "+fila+ " y " + " la columna es" + columna;
