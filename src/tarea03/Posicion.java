@@ -58,5 +58,11 @@ public class Posicion {
 		}
 
 	}
+	public String toString (){
+		
+        String mensaje="La fila es "+fila+ " y " + " la columna es" + columna;
+                
+        return mensaje;
+    }
 
 }
