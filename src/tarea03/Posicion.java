@@ -12,19 +12,20 @@ public class Posicion {
 
 		this.fila = fila;
 		this.columna = columna;
-		
-		if(fila>0 && fila<9) {
-			this.fila=fila;
-		}else {
-			this.fila=1;
+
+		if (fila > 0 && fila < 9) {
+			this.fila = fila;
+		} else {
+			this.fila = 1;
 		}
-		
-		if(columna>='a' && columna<='h') {
-			this.columna=columna;
-		}else {
-			this.columna='a';
+		if (columna >= 'a' && columna <= 'h') {
+			this.columna = columna;
+		} else {
+			this.columna = 'a';
 		}
 
 	}
+
+	
 
 }
