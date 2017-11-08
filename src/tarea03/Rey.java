@@ -16,22 +16,20 @@ public class Rey {
 		color = Color.BLANCO;
 
 	}
+	// Métodos getters
 
 	public Color getColor() {
 		return color;
-	}
-
-	public void setColor(Color color) {
-		this.color = color;
 	}
 
 	public Posicion getPosicion() {
 		return posicion;
 	}
 
-	public void setPosicion(Posicion posicion) {
-		this.posicion = posicion;
+	// Método toString
+
+	public String toString() {
+		return "Rey [color=" + color + ", posicion=" + posicion + "]";
 	}
-	
 
 }
