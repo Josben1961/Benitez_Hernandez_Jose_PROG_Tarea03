@@ -42,6 +42,11 @@ public class Rey {
 		this.posicion = posicion;
 	}
 
+	@Override
+	public String toString() {
+		return "Rey [color=" + color + ", posicion=" + posicion + "]";
+	}
+
 	public void mueve(Direccion nuevaDireccion) {
 		int fila = posicion.getFila();
 		int columna = posicion.getColumna();
