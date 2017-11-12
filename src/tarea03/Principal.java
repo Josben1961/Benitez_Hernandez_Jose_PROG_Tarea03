@@ -37,9 +37,9 @@ public class Principal {
 			System.out.println("TECLEA UNA DIRECCION");
 			System.out.println("Solo números entre 1 y 8");
 			System.out.println("Pulsa 9 para salir");
-			
+
 			System.out.println("1: NORTE, 2: NORESTE, 3: ESTE, 4: SURESTE, 5: SUR, 6: SUROESTE, "
-					+ "7: OESTE, 8: NOROESTE y 9: SALIR");			
+					+ "7: OESTE, 8: NOROESTE y 9: SALIR");
 			movimientoUsuario = Entrada.entero();
 			movimiento = movimientoUsuario;
 

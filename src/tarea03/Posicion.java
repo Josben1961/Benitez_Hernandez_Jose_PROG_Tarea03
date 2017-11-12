@@ -50,20 +50,22 @@ public class Posicion {
 	public void setColumna(char columna) {
 
 		if (columna > 'a' && columna < 'h') {
-			this.fila = fila;
+			this.columna = columna;
 		} else {
-			this.fila = 1;
+			this.columna = 'a';
 
 			System.out.println("Error, la fila introducida no es correcta");
 		}
 
 	}
-	//Creamos el método toString
-	public String toString (){
-		
-        String mensaje="La fila es "+fila+ " y " + " la columna es" + columna;
-                
-        return mensaje;
-    }
+
+	// Creamos el método toString
+	public String toString() {
+
+		String mensaje = "La fila es " + fila + " y " + " la columna es" + columna;
+
+		return mensaje;
+	}
+
 
 }
