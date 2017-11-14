@@ -3,7 +3,13 @@ package tarea03;
 public class Rey {
 	private Color color;
 	private Posicion posicion;
-	private Direccion nuevaDireccion;
+
+	// Constructor por defecto
+	public Rey() {
+
+		this.color = Color.BLANCO;
+		this.posicion = new Posicion(1, 'e');
+	}
 
 	// Constructor con el parámetro color
 	public Rey(Color color) {
@@ -19,27 +25,12 @@ public class Rey {
 
 	}
 
-	// Constructor por defecto
-	public Rey() {
-
-		color = Color.BLANCO;
-
-	}
-
 	public Color getColor() {
 		return color;
 	}
 
-	public void setColor(Color color) {
-		this.color = color;
-	}
-
 	public Posicion getPosicion() {
 		return posicion;
-	}
-
-	public void setPosicion(Posicion posicion) {
-		this.posicion = posicion;
 	}
 
 	@Override
@@ -51,51 +42,103 @@ public class Rey {
 		int fila = posicion.getFila();
 		int columna = posicion.getColumna();
 
-		this.nuevaDireccion = nuevaDireccion;
 		if (fila == 1 && nuevaDireccion == nuevaDireccion.SUR
 				|| nuevaDireccion == nuevaDireccion.SURESTE && nuevaDireccion == nuevaDireccion.SUROESTE) {
 
 			System.out.println("Movimiento no permitido");
 		}
-		switch (nuevaDireccion) {
-		case NORTE:
-			nuevaDireccion = Direccion.NORTE;
-			posicion.setFila(fila + 1);
-			posicion.setColumna((char) (columna + 1));
-			break;
-		case NORESTE:
-			nuevaDireccion = Direccion.NORESTE;
-			posicion.setFila(fila + 1);
-			posicion.setColumna((char) (columna + 1));
-			break;
-		case ESTE:
-			nuevaDireccion = Direccion.ESTE;
-			posicion.setColumna((char) (columna + 1));
-			break;
-		case SURESTE:
-			nuevaDireccion = Direccion.SURESTE;
-			posicion.setFila(fila - 1);
-			posicion.setColumna((char) (columna - 1));
-			break;
-		case SUR:
-			nuevaDireccion = Direccion.SUR;
-			posicion.setFila(fila - 1);
+		if (fila == 8 && nuevaDireccion == nuevaDireccion.NORTE
+				|| nuevaDireccion == nuevaDireccion.NORESTE && nuevaDireccion == nuevaDireccion.NOROESTE) {
 
-			break;
-		case SUROESTE:
-			nuevaDireccion = Direccion.SUROESTE;
-			posicion.setFila(fila - 1);
-			posicion.setColumna((char) (columna - 1));
-			break;
-		case OESTE:
-			nuevaDireccion = Direccion.OESTE;
-			posicion.setColumna((char) (columna - 1));
-			break;
-		case NOROESTE:
-			nuevaDireccion = Direccion.NOROESTE;
-			posicion.setFila(fila + 1);
-			posicion.setColumna((char) (columna - 1));
-			break;
+			System.out.println("Movimiento no permitido");
+		}
+		if (color == Color.BLANCO) {
+			switch (nuevaDireccion) {
+			case NORTE:
+				nuevaDireccion = Direccion.NORTE;
+				posicion.setFila(fila + 1);
+				posicion.setColumna((char) (columna));
+				break;
+			case NORESTE:
+				nuevaDireccion = Direccion.NORESTE;
+				posicion.setFila(fila + 1);
+				posicion.setColumna((char) (columna + 1));
+				break;
+			case ESTE:
+				nuevaDireccion = Direccion.ESTE;
+				posicion.setFila(fila);
+				posicion.setColumna((char) (columna + 1));
+				break;
+			case SURESTE:
+				nuevaDireccion = Direccion.SURESTE;
+				posicion.setFila(fila - 1);
+				posicion.setColumna((char) (columna + 1));
+				break;
+			case SUR:
+				nuevaDireccion = Direccion.SUR;
+				posicion.setFila(fila - 1);
+				posicion.setColumna((char) (columna));
+				break;
+			case SUROESTE:
+				nuevaDireccion = Direccion.SUROESTE;
+				posicion.setFila(fila - 1);
+				posicion.setColumna((char) (columna - 1));
+				break;
+			case OESTE:
+				nuevaDireccion = Direccion.OESTE;
+				posicion.setFila(fila);
+				posicion.setColumna((char) (columna - 1));
+				break;
+			case NOROESTE:
+				nuevaDireccion = Direccion.NOROESTE;
+				posicion.setFila(fila + 1);
+				posicion.setColumna((char) (columna - 1));
+				break;
+			}
+		}
+		if (color == Color.NEGRO) {
+			switch (nuevaDireccion) {
+			case NORTE:
+				nuevaDireccion = Direccion.NORTE;
+				posicion.setFila(fila + 1);
+				posicion.setColumna((char) (columna));
+				break;
+			case NORESTE:
+				nuevaDireccion = Direccion.NORESTE;
+				posicion.setFila(fila + 1);
+				posicion.setColumna((char) (columna + 1));
+				break;
+			case ESTE:
+				nuevaDireccion = Direccion.ESTE;
+				posicion.setFila(fila);
+				posicion.setColumna((char) (columna + 1));
+				break;
+			case SURESTE:
+				nuevaDireccion = Direccion.SURESTE;
+				posicion.setFila(fila - 1);
+				posicion.setColumna((char) (columna + 1));
+				break;
+			case SUR:
+				nuevaDireccion = Direccion.SUR;
+				posicion.setFila(fila - 1);
+				posicion.setColumna((char) (columna));
+				break;
+			case SUROESTE:
+				nuevaDireccion = Direccion.SUROESTE;
+				posicion.setFila(fila - 1);
+				posicion.setColumna((char) (columna - 1));
+				break;
+			case OESTE:
+				nuevaDireccion = Direccion.OESTE;
+				posicion.setFila(fila);
+				posicion.setColumna((char) (columna - 1));
+				break;
+			case NOROESTE:
+				nuevaDireccion = Direccion.NOROESTE;
+				posicion.setFila(fila + 1);
+				posicion.setColumna((char) (columna - 1));
+				break;
+			}
 		}
 
 	}

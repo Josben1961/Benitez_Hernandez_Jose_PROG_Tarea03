@@ -5,8 +5,8 @@ public class Posicion {
 	// Accesibles solo desde dentro de la clase
 	// Únicas y compartida por los objetos de la clase
 
-	private static int fila;
-	private static char columna;
+	private int fila;
+	private char columna;
 
 	public Posicion(int fila, char columna) {
 
@@ -43,13 +43,14 @@ public class Posicion {
 			this.fila = fila;
 		} else {
 			this.fila = 1;
+			System.out.println("Error, la fila introducida no es correcta");
 		}
-		System.out.println("Error, la fila introducida no es correcta");
+
 	}
 
 	public void setColumna(char columna) {
 
-		if (columna > 'a' && columna < 'h') {
+		if (columna >= 'a' && columna <= 'h') {
 			this.columna = columna;
 		} else {
 			this.columna = 'a';
@@ -62,10 +63,9 @@ public class Posicion {
 	// Creamos el método toString
 	public String toString() {
 
-		String mensaje = "La fila es " + fila + " y " + " la columna es" + columna;
+		String mensaje = "La fila es " + fila + " y " + " la columna es " + columna;
 
 		return mensaje;
 	}
-
 
 }
