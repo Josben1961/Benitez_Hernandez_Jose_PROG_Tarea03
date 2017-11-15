@@ -63,7 +63,7 @@ public class Posicion {
 	// Creamos el método toString
 	public String toString() {
 
-		String mensaje = "La fila es " + fila + " y " + " la columna es " + columna;
+		String mensaje = "Fila: " + fila + "  " + " Columna " + columna;
 
 		return mensaje;
 	}

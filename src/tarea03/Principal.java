@@ -13,7 +13,6 @@ public class Principal {
 		int color = 1;
 		boolean salir = false;
 		int movimiento;
-		Posicion nuevaPosicion;
 		Rey rey = null;
 
 		do {

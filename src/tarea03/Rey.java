@@ -42,16 +42,40 @@ public class Rey {
 		int fila = posicion.getFila();
 		int columna = posicion.getColumna();
 
-		if (fila == 1 && nuevaDireccion == nuevaDireccion.SUR
-				|| nuevaDireccion == nuevaDireccion.SURESTE && nuevaDireccion == nuevaDireccion.SUROESTE) {
+		// Evitar salida de tablero del rey por abajo. Se va a fila 1 y sigue desde ahí.
+		if (fila == 1 && nuevaDireccion == nuevaDireccion.SUR || nuevaDireccion == nuevaDireccion.SURESTE
+				|| nuevaDireccion == nuevaDireccion.SUROESTE) {
 
 			System.out.println("Movimiento no permitido");
 		}
-		if (fila == 8 && nuevaDireccion == nuevaDireccion.NORTE
-				|| nuevaDireccion == nuevaDireccion.NORESTE && nuevaDireccion == nuevaDireccion.NOROESTE) {
+		// Evitar salida de tablero del rey por arriba. Se va a fila 1 y sigue desde
+		// ahí.
+		if (fila == 8 && nuevaDireccion == nuevaDireccion.NORTE || nuevaDireccion == nuevaDireccion.NORESTE
+				|| nuevaDireccion == nuevaDireccion.NOROESTE) {
 
 			System.out.println("Movimiento no permitido");
 		}
+		// Evitar salida de tablero del rey por la izquierda. Se va a columna 'a' y
+		// sigue desde ahí.
+		if (columna == 'a' && nuevaDireccion == nuevaDireccion.ESTE || nuevaDireccion == nuevaDireccion.NORESTE) {
+
+			System.out.println("Movimiento no permitido");
+
+		}
+		// Evitar salida de tablero del rey por la izquierda. Se va a columna 'a' y
+		// sigue desde ahí.
+		if (columna == 'a' && nuevaDireccion == nuevaDireccion.OESTE || nuevaDireccion == nuevaDireccion.NOROESTE
+				|| nuevaDireccion == nuevaDireccion.SUROESTE) {
+
+			System.out.println("Movimiento no permitido");
+		}
+		// Evitar salida de tablero del rey por la derecha
+		if (columna == 'h' && nuevaDireccion == nuevaDireccion.ESTE || nuevaDireccion == nuevaDireccion.NORESTE
+				|| nuevaDireccion == nuevaDireccion.SURESTE) {
+
+			System.out.println("Movimiento no permitido");
+		}
+		// Movimientos para el Rey Blanco
 		if (color == Color.BLANCO) {
 			switch (nuevaDireccion) {
 			case NORTE:
@@ -96,6 +120,7 @@ public class Rey {
 				break;
 			}
 		}
+		// Movimientos para el Rey Negro
 		if (color == Color.NEGRO) {
 			switch (nuevaDireccion) {
 			case NORTE:
